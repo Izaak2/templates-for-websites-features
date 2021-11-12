@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap')
+
+// Font variable
+$mochiy-pop: 'Mochiy Pop P One', sans-serif
+
+//Color variable
+$blue-line-fill: #3498db
+$grey-line-fill: #e0e0e0
+
+//screen sizes
+$breakinpoint-phone: 480px
+
+*
+  box-sizing: border-box
+
+body
+  background-color: #f6f7fb
+  font-family: $mochiy-pop
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100vh
+  overflow: hidden
+  margin: 0
+
+.container
+  text-align: center
+  .progress-container
+    display: flex
+    justify-content: space-between
+    position: relative
+    margin-bottom: 30px
+    max-width: 100%
+    width: 350px
+    &::before
+      content: ""
+      background-color: $grey-line-fill
+      position: absolute
+      top: 50%
+      left: 0
+      height: 4px
+      width: 100%
+      transition: translateY(-50%)
+      z-index: -1
+    .progress
+      background-color: $blue-line-fill
+      position: absolute
+      top: 50%
+      left: 0
+      height: 4px
+      width: 0%
+      transition: translateY(-50%)
+      z-index: -1
+      transition: .4 ease
+
+.circle
+  background-color: white
+  color: #999
+  border-radius: 50%
+  height: 30px
+  width: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+  border: 3px solid $grey-line-fill
+  transition: .4s ease
+
+.active
+  border-color: $blue-line-fill
+
+.btn
+  background-color: $blue-line-fill
+  color: #fff
+  border: 0
+  border-radius: 6px
+  cursor: pointer
+  font-family: $mochiy-pop
+  padding: 8px 30px
+  margin: 5px
+  font-size: 14px
+  &:active
+    transform: scale(0.98)
+  &:focus
+    outline: 0
+  &:disabled
+    background-color: $grey-line-fill
+    cursor: not-allowed
